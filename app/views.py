@@ -33,7 +33,7 @@ def about():
 def contact():
     form = myForm()
     if form.validate_on_submit():
-        print('/success')
+        print('success')
     return render_template('contact.html', form=form)
 
 @app.route('/submit')
@@ -41,8 +41,7 @@ def submit():
     if request.method=='GET':
         form = myForm()
         msg= Message(form.subject.data, sender=(form.name.data,form.email.data), recipients= ['19feace667-6f457a@inbox.mailtrap.io'])
-        #msg might be the problem
-        msg.body=form.text.data
+        msg.body=form.text.data 
         mail.send(msg)
         flash("Your message was sent")
         return redirect('/')
