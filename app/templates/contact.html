@@ -2,30 +2,29 @@
 
 {% block main %}
 <body>
-    <h1>Contact Form</h1>
-    <br>
-    <h7>Fill in this form to contact the site owners</h7>
+    <h1>Contact Form</h1><hr class="line">
+    <h7>Fill in this form to contact the site owners.</h7>
 
     <form method="GET" action="{{ url_for('submit') }}"> <!--ask laing about this-->
         {{form.csrf_token}}
         <br>
-        <div>
-            {{form.name.label}} 
-            <p> Please enter your full name</p>
+        <div class="form_text">
+            {{form.name.label}} <h7 class="text">(Required)</h7>
+            <p> Please enter your full name.</p>
             {{form.name}}
         </div><br>
         <div>
-            {{form.email.label}} 
-            <p>Please enter your e-mail address</p> 
+            {{form.email.label}} <h7 class="text1">(Required)</h7>
+            <p>Please enter your e-mail address.</p> 
             {{form.email}}
         </div><br>
         <div>
-            {{form.subject.label}} 
-            <p>Please enter the subject for your message</p>
+            {{form.subject.label}} <h7 class="text2">(Required)</h7>
+            <p>Please enter the subject for your message.</p>
             {{form.subject}}
         </div><br>
         <div>
-            {{form.text.label}} 
+            {{form.text.label}} <h7 class="text3">(Required)</h7>
         <p> Please enter the message you would like to send</p>
             {{form.text}}
         </div><br>
